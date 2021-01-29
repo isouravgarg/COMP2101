@@ -27,7 +27,7 @@ echo " "
 echo "================================================================="
 echo "list of files with their sizes and an error redirect to /dev/null"
 echo "================================================================="
-find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 3
+find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 5
 echo ""
 exit
 
