@@ -18,6 +18,12 @@ echo "Setuid files:"
 echo "============="
 find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 5
 echo ""
+echo "============="
+echo ""
+echo "12 largest Setuid files sorted by size"
+echo "============="
+du -a /var | sort -n -r | head -n 12
+
 
 # for the task, add
 # commands to display a title
