@@ -1,5 +1,4 @@
 #!/bin/bash
-ip a s ens33 |grep -w inet |awk '{print $2}'
 # this script generates a report of the files on the system that have the setuid permission bit turned on
 # it is for the lab1 exercise
 # it uses the find command to find files of the right type and with the right permissions, and an error redirect to
