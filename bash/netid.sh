@@ -75,12 +75,12 @@ EOF
 count=$(lshw -class network | awk '/logical name:/{print $3}' | wc -l)
 for((w=1;w<=$count;w+=1));
 do
-  interface=$(lshw -class network |awk '/logical name:/{print $3}' |awk -v z=$w 'NR==z{print $1; exit}')
-  if [[ $interface = "lo" ]] ; then continue ; fi
+interface=$(lshw -class network |awk '/logical name:/{print $3}' |awk -v z=$w 'NR==z{print $1; exit}')
+	if [[ $interface = "lo" ]] ; then continue ; fi
 
 [ "$verbose" = "ens33" ] && echo "Reporting on interface(s): $interface"
 
-[ "$verbose" = "ens33" ] && echo "Getting IPV4 address and name for interface $interface"
+[ "$verbose" = "ens34" ] && echo "Getting IPV4 address and name for interface $interface"
 # Find an address and hostname for the interface being summarized
 # we are assuming there is only one IPV4 address assigned to this interface
 ipv4_address=$(ip a s $interface|awk -F '[/ ]+' '/inet /{print $3}')
